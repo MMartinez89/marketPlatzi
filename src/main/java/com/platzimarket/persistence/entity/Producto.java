@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "productos")
-public class Product {
+public class Producto {
 
 
     @Id //ES clabe primaria
@@ -27,6 +27,12 @@ public class Product {
     private Integer cantidadStock;
 
     private Boolean estado;
+
+
+
+    @ManyToOne
+    @JoinColumn(name="id_categoria", insertable = false, updatable = false)
+    private  Categoria categoria;
 
     public Integer getIdProducto() {
         return idProducto;
@@ -82,5 +88,13 @@ public class Product {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }

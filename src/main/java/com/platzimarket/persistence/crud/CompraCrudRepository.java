@@ -1,4 +1,11 @@
 package com.platzimarket.persistence.crud;
 
-public interface CompraCrudRepository {
+import com.platzimarket.persistence.entity.Compra;
+import org.springframework.data.repository.CrudRepository;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface CompraCrudRepository extends CrudRepository<Compra, Integer> {
+    Optional<List> findByIdCliente(String idCliente);
 }
