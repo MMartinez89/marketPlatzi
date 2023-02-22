@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.paltzi'
-version = '0.0.1-SNAPSHOT'
+version = '1.0'
 sourceCompatibility = '17'
 
 repositories {
@@ -14,6 +14,7 @@ repositories {
 }
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 
@@ -21,6 +22,13 @@ dependencies {
 	implementation 'io.springfox:springfox-swagger2:3.0.0'
 	implementation 'io.springfox:springfox-swagger-ui:3.0.0'
 	//compile "io.springfox:springfox-swagger-ui:3.0.0"
+
+	//implementation 'io.jsonwebtoken:jjwt:0.9.1'
+
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+	//implementation 'io.jsonwebtoken:jjwt-gson:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
 
 
 	runtimeOnly 'org.postgresql:postgresql'
